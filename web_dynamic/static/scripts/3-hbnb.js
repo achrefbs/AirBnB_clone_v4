@@ -1,7 +1,49 @@
+$(function () {
+  // Serve API content for places_search
+  let myDict = {};
+  $.ajax({type: 'POST',
+    url: 'http://0.0.0.0:5001/api/v1/places_search/',
+    data: JSON.stringify(myDict),
+    success: function (result) {
+      for (let x in result) {
+        let structure = [
+          '<article>',
+          '<div class="title_box">',
+          '<h2>' + result[x].name + '</h2>',
+          '<div class="price_by_night">' + '$' + result[x].price_by_night + '</div>',
+          '</div>',
+          '<div class="information">',
+          '<div class="max_guest">',
+          '<i class="fa fa-users fa-3x" aria-hidden="true"></i>',
+          '<br />',
+          result[x].max_guest + 'max_guests',
+          '</div>',
+          '<div class="number_rooms">',
+          '<i class="fa fa-bed fa-3x" aria-hidden="true"></i>',
+          '<br />',
+          result[x].number_rooms + "Bedrooms",
+          '</div>',
+          '<div class="number_bathrooms">',
+          '<i class="fa fa-bath fa-3x" aria-hidden="true"></i>',
+          '<br />',
+          result[x].number_bathrooms + "Bathrooms",
+          '</div>',
+          '</div>',
+          '<div class="description">',
+          result[x].description,
+          '</div>',
+          '</article>'
+        ];
+        $(structure.join('')).appendTo("section.placesh1");
+      }
+    },
+    dataType: 'json',
+    contentType: 'application/json'
+  });
 const $ = window.$;
-window.addEventListener('DOMContentLoaded', function (event) {
+window.addEventListener("DOMContentLoaded", function (event) {
   const dict = {};
-  $('input[type=checkbox]').change(function () {
+  $("input[type=checkbox]").change(function () {
     if (this.checked) {
       dict[$(this).attr('data-id')] = $(this).attr('data-name');
     } else {
