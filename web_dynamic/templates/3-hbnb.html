@@ -37,13 +37,15 @@
             </ul>
           </div>
         </div>
-        <div class="amenities">
+      * <div class="amenities">
           <h3>Amenities</h3>
           <h4>&nbsp;</h4>
           <div class="popover">
             <ul>
               {% for amenity in amenities %}
-              <li><input type="checkbox" style="margin-left: 10px;" data-id={{ amenity.id }} data-name={{ amenity.name }}>{{ amenity.name }}</li>
+              <li><input type="checkbox"
+                         style="margin-left: 10px;" data-id="{{ amenity.id }}"
+                         data-name="{{ amenity.name }}">"{{ amenity.name }}"</li>
               {% endfor %}
             </ul>
           </div>
@@ -52,23 +54,11 @@
       </section>
       <div class="placesh1"><h1>Places</h1></div>
       <section class="places">
-        <!-- <h1>Places</h1> -->
-        <article>
-          <div class="title_box">
-            <h2></h2>
-            <div class="price_by_night"></div>
-          </div>
-          <div class="information">
-            <div class="max_guest"></div>
-            <div class="number_rooms"></div>
-            <div class="number_bathrooms"></div>
-          </div>
-          <div class="user">
-            <b>Owner:</b>
-          </div>
-          <div class="description">
-          </div>
-        </article>
+        <!-- API ARTICLE tag representing a Place in the SECTION.places -->
+        <!--START-->
+        <!--END-->
+        <h1>Places</h1>
+       
       </section>
     </div>
     <footer>

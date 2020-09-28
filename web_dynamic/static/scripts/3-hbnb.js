@@ -16,7 +16,7 @@ $(function () {
           '<div class="max_guest">',
           '<i class="fa fa-users fa-3x" aria-hidden="true"></i>',
           '<br />',
-          result[x].max_guest + 'max_guests',
+          result[x].max_guest + "guests",
           '</div>',
           '<div class="number_rooms">',
           '<i class="fa fa-bed fa-3x" aria-hidden="true"></i>',
@@ -29,7 +29,7 @@ $(function () {
           result[x].number_bathrooms + "Bathrooms",
           '</div>',
           '</div>',
-          '<div class="description">',
+          '<div class="Description">',
           result[x].description,
           '</div>',
           '</article>'
