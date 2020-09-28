@@ -34,7 +34,7 @@ $(function () {
           '</div>',
           '</article>'
         ];
-        $(structure.join('')).appendTo("section.placesh1");
+        $(structure.join('')).appendTo("section.places");
       }
     },
     dataType: 'json',
